@@ -1,16 +1,16 @@
 const express = require('express')
 const router = express.Router()
-const todosController = require('../controllers/todos') 
+const booksController = require('../controllers/books') 
 const { ensureAuth } = require('../middleware/auth')
 
-router.get('/', ensureAuth, todosController.getTodos)
+router.get('/', ensureAuth, booksController.getBooks)
 
-router.post('/createTodo', todosController.createTodo)
+router.post('/addBook', booksController.addBook)
 
-router.put('/markComplete', todosController.markComplete)
+router.put('/changeStatus', booksController.changeStatus)
 
-router.put('/markIncomplete', todosController.markIncomplete)
+router.put('/changePage', booksController.changePage)
 
-router.delete('/deleteTodo', todosController.deleteTodo)
+router.delete('/deleteBook', booksController.deleteBook)
 
 module.exports = router

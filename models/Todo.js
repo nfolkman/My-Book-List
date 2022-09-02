@@ -1,13 +1,16 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
-  todo: {
+const BookSchema = new mongoose.Schema({
+  title: {
     type: String,
     required: true,
   },
-  completed: {
-    type: Boolean,
+  status: {
+    type: String,
     required: true,
+  },
+  page: {
+    type: Number
   },
   userId: {
     type: String,
@@ -15,4 +18,4 @@ const TodoSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Book', BookSchema)
