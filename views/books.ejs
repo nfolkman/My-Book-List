@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Books</h1>
+  
+    <form action="/books/addBook" method='POST'>
+      <input type="text" placeholder="Enter Book Title" name='title'>
+      <select name="status">
+        <option value="plan_to_read">Plan to Read</option>
+        <option value="currently_reading">Currently Reading</option>
+        <option value="finished">Finished</option>
+        <option value="abandoned">Abandoned</option>
+      </select>
+      <input type="submit">
+    </form>
+  
+    <ul class="bookCardContainer">
+    <% books.forEach( el => { %>
+            <li class='bookCard <%= el.status %>' data-id='<%=el._id%>'>
+              <h2 class='title'> <%= el.title %> </h2>
+              <div class="controlBtns" data-id='<%=el._id%>'>
+                <span class='del'> Delete </span>
+                <button class='plan_to_read'>Plan to Read</button>
+                <button class='currently_reading'>Currently Reading</button>
+                <button class='finished'>Finished</button>
+                <button class='abandoned'>Abandoned</button>
+              </div>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <a href="/logout">Logout</a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

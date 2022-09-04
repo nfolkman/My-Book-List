@@ -1,27 +1,37 @@
 const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const planned = document.querySelectorAll('button.plan_to_read')
+const reading = document.querySelectorAll('button.currently_reading')
+const finished = document.querySelectorAll('button.finished')
+const abandoned = document.querySelectorAll('button.abandoned')
 
 Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
+    el.addEventListener('click', deleteBook)
 })
 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
+Array.from(planned).forEach((el)=>{
+    el.addEventListener('click', markPlanned)
 })
 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
+Array.from(reading).forEach((el)=>{
+    el.addEventListener('click', markReading)
 })
 
-async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id
+Array.from(finished).forEach((el)=>{
+    el.addEventListener('click', markFinished)
+})
+
+Array.from(abandoned).forEach((el)=>{
+    el.addEventListener('click', markAbandoned)
+})
+
+async function deleteBook(){
+    const bookId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/deleteTodo', {
+        const response = await fetch('books/deleteBook', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'bookIdFromJSFile': bookId
             })
         })
         const data = await response.json()
@@ -32,14 +42,15 @@ async function deleteTodo(){
     }
 }
 
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
+async function markPlanned(){
+    const bookId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/markComplete', {
+        const response = await fetch('books/changeStatus', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'bookIdFromJSFile': bookId,
+                'status': 'plan_to_read'
             })
         })
         const data = await response.json()
@@ -50,14 +61,53 @@ async function markComplete(){
     }
 }
 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
+async function markReading(){
+    const bookId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/markIncomplete', {
+        const response = await fetch('books/changeStatus', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'bookIdFromJSFile': bookId,
+                'status': 'currently_reading'
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+async function markFinished(){
+    const bookId = this.parentNode.dataset.id
+    try{
+        const response = await fetch('books/changeStatus', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'bookIdFromJSFile': bookId,
+                'status': 'finished'
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+async function markAbandoned(){
+    const bookId = this.parentNode.dataset.id
+    try{
+        const response = await fetch('books/changeStatus', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'bookIdFromJSFile': bookId,
+                'status': 'abandoned'
             })
         })
         const data = await response.json()

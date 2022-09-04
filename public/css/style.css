@@ -1,10 +1,80 @@
-h1{
-    color: red;
+*{
+  font-family: sans-serif;
 }
-.completed{
-    text-decoration: line-through;
-    color: gray;
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
-.not{
-    text-decoration: underline;
+
+.plan_to_read .plan_to_read, currently_reading. currently_reading, .finished .finished, .abandoned .abandoned{
+  display: none;
+}
+
+.plan_to_read {
+  background-color: orange;
+}
+
+.currently_reading {
+  background-color: blue;
+}
+
+.finished {
+  background-color: green;
+}
+
+.abandoned {
+  background-color: red;
+}
+
+h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+}
+
+.bookCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bookCard {
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+.controlBtns {
+  display: flex;
+  gap: 10px;
+}
+
+.controlBtns button {
+  border: 0;
+  width: 150px;
+  height: 30px;
+  color: #FFF;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+
+.title {
+  
+}
+
+.del {
+  
 }

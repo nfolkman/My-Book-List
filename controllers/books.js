@@ -13,7 +13,7 @@ module.exports = {
     },
     addBook: async (req, res)=>{
         try{
-            await Book.create({title: req.body.bookTitle, status: 'plan to read', userId: req.user.id})
+            await Book.create({title: req.body.title, status: req.body.status, userId: req.user.id})
             console.log('Book has been added!')
             res.redirect('/books')
         }catch(err){
@@ -21,10 +21,9 @@ module.exports = {
         }
     },
     changeStatus: async (req, res)=>{
-      //Need to fix try block
         try{
-            await Book.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
+            await Book.findOneAndUpdate({_id:req.body.bookIdFromJSFile},{
+                status: req.body.status
             })
             console.log('Status changed')
             res.json('Status changed')
@@ -34,21 +33,20 @@ module.exports = {
     },
       changePage: async (req, res)=>{
         //Need to fix try block
-        try{
-            await Book.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                page: req.body.page
-            })
-            console.log('Page changed')
-            res.json('Page changed')
-        }catch(err){
-            console.log(err)
-        }
+        // try{
+        //     await Book.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
+        //         page: req.body.page
+        //     })
+        //     console.log('Page changed')
+        //     res.json('Page changed')
+        // }catch(err){
+        //     console.log(err)
+        // }
     },
     deleteBook: async (req, res)=>{
-        //Need to fix console.log and try block
-        console.log(req.body.todoIdFromJSFile)
+        console.log(req.body.bookIdFromJSFile)
         try{
-            await Book.findOneAndDelete({_id:req.body.todoIdFromJSFile})
+            await Book.findOneAndDelete({_id:req.body.bookIdFromJSFile})
             console.log('Book deleted')
             res.json('Book deleted')
         }catch(err){
