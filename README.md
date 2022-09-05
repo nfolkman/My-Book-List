@@ -10,9 +10,9 @@ Or already *tried* reading it and dropped it - and put it on this list so you wo
 
 Includes local authorization, so you don't have to download anything *and* no one else can see your list and judge you for your tastes.
 
-**Link to project:** Coming Soon
+**Link to project:** coming soon
 
-
+![my-book-list](https://user-images.githubusercontent.com/101761079/188512514-e6da54da-2040-4a50-a0e5-59a0245e8244.png)
 
 ## How It's Made:
 
@@ -37,8 +37,8 @@ Make no mistake, this is a pretty good Minimum Viable Product for less than one 
 That said, it's bare bones. Given more time, we would implement some of the features we tabled due to time crunch:
 
 * Connection to a books API to provide additional functionality (e.g., an autocomplete search bar for adding titles) and design features (e.g., display of book covers)
-* The ability to sort the book list
-* Additional data fields for each book beyond Title and Status (e.g., genre, author), which the list could be sorted by
+* The ability to sort the book list by status
+* Additional data fields for each book beyond Title and Status (e.g., genre, author), which the list could also be sorted by
 * Page numbers for *Currently reading* and *Abandoned* titles, so users can see where they are/where they finally couldn't put up with the author anymore
 * A notes field for *Currently reading* and *Abandoned* titles, where users can store favorite quotes or ideas sparked by their reading
 * The ability to add ratings to *Finished* titles
@@ -48,7 +48,7 @@ That said, it's bare bones. Given more time, we would implement some of the feat
 
 This was easier than we expected. Passport and Mongoose do a lot of the heavy lifting.
 
-Coding this as a group was also surprisingly effective. Rather than being a case of "too many cooks spoil the broth," we would each catch issues the others would miss and could cover for each others' weaker points. The asynchronus features of git are probably more powerful for seasoned developers, but for a group of developers still getting a handle on some of the tech, replit simplified collaboration considerably.
+Coding this as a group was also surprisingly effective. Rather than being a case of "too many cooks spoil the broth," we would each catch issues the others would miss and could cover for each others' weaker points. Although the asynchronus features of git probably offer a more powerful approach to collaboration, as a group of developers still getting a handle on some of the tech and working with very limited time, replit was king.
 
 ## If you want to run this code yourself:
 
