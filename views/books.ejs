@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>My Book List</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <h1>My Book List</h1>
+                <div class="circle circleOne"></div>
+                <div class="circle circleTwo"></div>
+                <div class="circle circleThree"></div>
+                <div class="circle circleFour"></div>
+
+                <a href="/logout" class="logoutBtn">Logout</a>
+            </nav>
+            <form action="/books/addBook" method="POST">
+                <input
+                    type="text"
+                    placeholder="Enter Book Title"
+                    name="title"
+                    class="bookTitleInput"
+                />
+                <select name="status" class="selectBox">
+                    <option value="plan_to_read">Plan to Read</option>
+                    <option value="currently_reading">Currently Reading</option>
+                    <option value="finished">Finished</option>
+                    <option value="abandoned">Abandoned</option>
+                </select>
+                <input type="submit" class="submitBtn" value="Add Book" />
+            </form>
+
+            <ul class="bookCardContainer">
+                <% books.forEach( el => { %>
+                <li class="bookCard <%= el.status %>" data-id="<%=el._id%>">
+                    <h2 class="title"><%= el.title %></h2>
+                    <div class="controlBtns" data-id="<%=el._id%>">
+                        <span class="del">delete</span>
+                        <span class="statusDisplay"
+                            ><%= el.status.split("_").join(" ") %></span
+                        >
+                        <button class="plan_to_read">Plan to Read</button>
+                        <button class="currently_reading">
+                            Currently Reading
+                        </button>
+                        <button class="finished">Finished</button>
+                        <button class="abandoned">Abandoned</button>
+                    </div>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
