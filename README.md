@@ -38,9 +38,9 @@ That said, it's bare bones. Given more time, we would implement some of the feat
 
 * Connection to a books API to provide additional functionality (e.g., an autocomplete search bar for adding titles) and design features (e.g., display of book covers)
 * The ability to sort the book list by status
-* Additional data fields for each book beyond Title and Status (e.g., genre, author), which the list could also be sorted by
+* Additional data fields for each book beyond title and status (e.g., genre, author), which the list could also be sorted by
 * Page numbers for *Currently reading* and *Abandoned* titles, so users can see where they are/where they finally couldn't put up with the author anymore
-* A notes field for *Currently reading* and *Abandoned* titles, where users can store favorite quotes or ideas sparked by their reading
+* A notes field for *Currently reading* and *Abandoned* titles, where users can store favorite quotes, ideas sparked by their reading, or grievances about terrible books
 * The ability to add ratings to *Finished* titles
 * And more!
 
