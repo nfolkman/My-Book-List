@@ -10,7 +10,7 @@ Or already *tried* reading it and dropped it - and put it on this list so you wo
 
 Includes local authorization, so you don't have to download anything *and* no one else can see your list and judge you for your tastes.
 
-**Link to project:** coming soon
+**Try it out:** [My Book List](https://my-book-list.onrender.com/) 
 
 ![my-book-list](https://user-images.githubusercontent.com/101761079/188512514-e6da54da-2040-4a50-a0e5-59a0245e8244.png)
 

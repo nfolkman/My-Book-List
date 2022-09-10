@@ -119,6 +119,10 @@ nav {
   margin: 0 2rem 2rem;
 }
 
+nav > div {
+  display: flex;
+}
+
 h1 {
   font-size: 2.75rem;
   color: var(--color-one);
@@ -306,7 +310,19 @@ li {
     height: 1.4rem;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 480px) {
+
+@media all and (max-width: 540px) {
+  .container > form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container > form > * {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 480px) {
   .container {
     width: 100%;
     display: flex;
