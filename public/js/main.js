@@ -1,4 +1,3 @@
-const { $where } = require("../../models/Book")
 
 const deleteBtn = document.querySelectorAll('.del')
 const planned = document.querySelectorAll('button.plan_to_read')
@@ -119,10 +118,3 @@ async function markAbandoned(){
         console.log(err)
     }
 }
-
-
-// $('select .genreInput').select2(
-//     {
-//         maximumSelectionLength: 3
-//     }
-// )

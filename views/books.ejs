@@ -86,7 +86,7 @@
         <% books.forEach( el => { %>
         <li class="bookCard <%= el.status %>" data-id="<%=el._id%>">
           <h2 class="title"><%= el.title %></h2>
-          <h4 class="genre"><%- el.genre %></h4>
+          <h4 class="genre"><%= el.genre %></h4>
           <div class="controlBtns" data-id="<%=el._id%>">
             <span class="del">delete</span>
             <span class="statusDisplay"
