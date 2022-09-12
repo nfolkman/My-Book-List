@@ -9,6 +9,9 @@ const BookSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  genre: {
+    type: String,
+  },
   page: {
     type: Number
   },

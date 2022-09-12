@@ -43,6 +43,6 @@ app.use("/", mainRoutes);
 app.use("/books", bookRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
+  console.log(`Server is running, you better catch it!`);
 });
 

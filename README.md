@@ -10,7 +10,7 @@ Or already *tried* reading it and dropped it - and put it on this list so you wo
 
 Includes local authorization, so you don't have to download anything *and* no one else can see your list and judge you for your tastes.
 
-**Link to project:** coming soon
+**Try it out:** [My Book List](https://my-book-list.onrender.com/) 
 
 ![my-book-list](https://user-images.githubusercontent.com/101761079/188512514-e6da54da-2040-4a50-a0e5-59a0245e8244.png)
 
@@ -24,7 +24,7 @@ This program uses a local [Passport](https://www.passportjs.org/ 'Passport') sol
 
 Once users have logged in (or signed up, if they are first-time users), they are directed to their list of books. Those who are not logged in can only access the login or create account pages.
 
-In their book list, users can add titles to their list along with a status (*Plan to read*, *Currently reading*, *Finished*, or *Abandoned*).
+In their book list, users can add titles to their list along with specified genre and a status (*Plan to read*, *Currently reading*, *Finished*, or *Abandoned*).
 Users can also change the status of a book in their library (from *Plan to read* to *Currently reading*, for example, or from *Currently reading* to *Abandoned*).
 And, of course, users can delete titles from their list.
 

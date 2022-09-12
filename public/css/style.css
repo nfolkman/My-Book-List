@@ -119,6 +119,10 @@ nav {
   margin: 0 2rem 2rem;
 }
 
+nav > div {
+  display: flex;
+}
+
 h1 {
   font-size: 2.75rem;
   color: var(--color-one);
@@ -179,10 +183,10 @@ form {
 }
 
 .selectBox {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 0.4rem;
-  font-size: 1.05rem;
+  border: 1px solid #ddd !important;
+  border-radius: 5px !important;
+  padding: 0.4rem !important;
+  font-size: 1.05rem !important;
 }
 
 .submitBtn {
@@ -229,6 +233,13 @@ form {
   padding-top: 1rem;
 }
 
+.genre{
+  margin-top:5%;
+  color: rgb(255, 255, 255);
+  font-size: small;
+  border-radius: 5px !important;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -259,7 +270,6 @@ li {
 .controlBtns {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
 }
 
 .controlBtns button {
@@ -306,7 +316,19 @@ li {
     height: 1.4rem;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 480px) {
+
+@media all and (max-width: 540px) {
+  .container > form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container > form > * {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 480px) {
   .container {
     width: 100%;
     display: flex;

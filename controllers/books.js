@@ -13,13 +13,18 @@ module.exports = {
     },
     addBook: async (req, res)=>{
         try{
-            await Book.create({title: req.body.title, status: req.body.status, userId: req.user.id})
+            await Book.create({title: req.body.title,genre: req.body.genre, status: req.body.status, userId: req.user.id})
             console.log('Book has been added!')
             res.redirect('/books')
         }catch(err){
             console.log(err)
         }
     },
+    // selectGenre: async (req, res) => {
+    //     try{
+    //         await Book.
+    //     }
+    // },
     changeStatus: async (req, res)=>{
         try{
             await Book.findOneAndUpdate({_id:req.body.bookIdFromJSFile},{

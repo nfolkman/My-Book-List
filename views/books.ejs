@@ -33,6 +33,46 @@
           name="title"
           class="bookTitleInput"
         />
+
+        <select name="genre" class="selectBox genreInput">
+          <option value="" disabled selected>Genre</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Dystopian">Dystopian</option>
+          <option value="Action/Adventure">Action/Adventure</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Horror">Horror</option>
+          <option value="Thiller/Suspense">Thriller/Suspense</option>
+          <option value="Historical Fiction">Historical Fiction</option>
+          <option value="Romance">Romance</option>
+          <option value="Womens Fiction">Women's Fiction</option>
+          <option value="LGBTQ+">LGBTQ+</option>
+          <option value="Contemporary Fiction">Contemporary Fiction</option>
+          <option value="Literary Fiction">Literary Fiction</option>
+          <option value="Magical Realism">Magical Realism</option>
+          <option value="Graphic Novel">Graphic Novel</option>
+          <option value="Short Story">Short Story</option>
+          <option value="Young Adult">Young Adult</option>
+          <option value="New Adult">New Adult</option>
+          <option value="Children's Fiction">Children's Fiction</option>
+          <option value="Memoir & Autobiography">Memoir & Autobiography</option>
+          <option value="Biography">Biography</option>
+          <option value="Food & Drink">Food & Drink</option>
+          <option value="Art & Photography">Art & Photography</option>
+          <option value="Self-help">Self-help</option>
+          <option value="History">History</option>
+          <option value="Travel">Travel</option>
+          <option value="True Crime">True Crime</option>
+          <option value="Humor">Humor</option>
+          <option value="Essays">Essays</option>
+          <option value="Guide/How-to">Guide/How-to</option>
+          <option value="Religion & Spirituality">Religion & Spirituality</option>
+          <option value="Humanities/Social Sciences">Humanities/Social Sciences</option>
+          <option value="Parenting & Families">Parenting & Families</option>
+          <option value="Science/Technology">Science/Technology</option>
+          <option value="Children's Non-fiction">Children's Non-fiction</option>
+        </select>
+
         <select name="status" class="selectBox">
           <option value="plan_to_read">Plan to Read</option>
           <option value="currently_reading">Currently Reading</option>
@@ -46,6 +86,7 @@
         <% books.forEach( el => { %>
         <li class="bookCard <%= el.status %>" data-id="<%=el._id%>">
           <h2 class="title"><%= el.title %></h2>
+          <h4 class="genre"><%- el.genre %></h4>
           <div class="controlBtns" data-id="<%=el._id%>">
             <span class="del">delete</span>
             <span class="statusDisplay"
