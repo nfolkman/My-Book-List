@@ -12,7 +12,8 @@ Includes local authorization, so you don't have to download anything *and* no on
 
 **Try it out:** [My Book List](https://my-book-list.onrender.com/) 
 
-![my-book-list](https://user-images.githubusercontent.com/101761079/188512514-e6da54da-2040-4a50-a0e5-59a0245e8244.png)
+![Screenshot (304)](https://user-images.githubusercontent.com/98185555/189773457-706766c0-a482-4d97-80c3-1d0537600545.png)
+
 
 ## How It's Made:
 
@@ -24,9 +25,9 @@ This program uses a local [Passport](https://www.passportjs.org/ 'Passport') sol
 
 Once users have logged in (or signed up, if they are first-time users), they are directed to their list of books. Those who are not logged in can only access the login or create account pages.
 
-In their book list, users can add titles to their list along with specified genre and a status (*Plan to read*, *Currently reading*, *Finished*, or *Abandoned*).
+<strong>In their book list, users can add titles to their list along with specified genre and a status (*Plan to read*, *Currently reading*, *Finished*, or *Abandoned*).
 Users can also change the status of a book in their library (from *Plan to read* to *Currently reading*, for example, or from *Currently reading* to *Abandoned*).
-And, of course, users can delete titles from their list.
+And, of course, users can delete titles from their list.</strong>
 
 All of the list storage and management is handled with Mongoose and MongoDB.
 Rendering out the lists is done with EJS, along with some static CSS to make things not hideous, and client-side JavaScript to handle button functionality.
